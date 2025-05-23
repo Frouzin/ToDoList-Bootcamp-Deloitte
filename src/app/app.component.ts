@@ -1,30 +1,41 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser'; 
 import { FormsModule } from '@angular/forms';
 
+interface Tarefa {
+  descricao: string;
+  completed: boolean;
+}
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, BrowserModule,],
+  imports: [RouterOutlet, CommonModule, FormsModule,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
   title = 'ToDoList';
-  tarefa = '';
-
-  public items = ['Item 1', 'Item 2', 'Item 3'];
+  tarefa: string = '';
+  tarefas: Tarefa[] = [
+    { descricao: 'Estudar Angular', completed: false },
+    { descricao: 'Fazer compras', completed: false },
+    { descricao: 'Lavar o carro', completed: false }
+  ];
 
   addTarefa() {
     if (this.tarefa.trim() !== '') {
-      this.items.push(this.tarefa);
+      this.tarefas.push({ descricao: this.tarefa, completed: false });
       this.tarefa = '';
     }
   }
 
   removeTarefa(index: number) {
-    this.items.splice(index, 1);
+    this.tarefas.splice(index, 1);
+  }
+
+  toggleTask(index: number): void {
+    this.tarefas[index].completed = !this.tarefas[index].completed;
   }
 }

@@ -1,11 +1,18 @@
-<h1>To-Do List</h1>
+<h1>{{ title }}</h1>
 
 <ul>
-  <li *ngFor="let item of items; let i = index;">
-    <span>{{ item }}</span> <button (click)="removeTarefa(i)">Remove</button>
+  <li
+    *ngFor="let tarefa of tarefas; index as i"
+    [class.completed]="tarefa.completed"
+  >
+    <span (click)="toggleTask(i)">
+      {{ tarefa.descricao }}
+    </span>
+    <button (click)="removeTarefa(i)">Remover</button>
   </li>
 </ul>
 
-<input type="text" [(ngModel)]="tarefa" placeholder="Add new item" />
-<button (click)="addTarefa()">Add</button>
-<router-outlet/>
+<input type="text" [(ngModel)]="tarefa" placeholder="Adicionar nova tarefa" />
+<button (click)="addTarefa()">Adicionar</button>
+
+<router-outlet></router-outlet>
