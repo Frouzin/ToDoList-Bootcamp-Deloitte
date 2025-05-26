@@ -1,10 +1,101 @@
-.completed {
-  text-decoration: line-through;
-  color: gray;
-  cursor: pointer;
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #1976d2;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+ul {
+  max-width: 400px;
+  margin: 0 auto 24px auto;
+  padding: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 li {
   list-style: none;
-  margin-bottom: 8px;
+  margin: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background: #f0f4fa;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #aaa;
+  cursor: pointer;
+}
+
+span {
+  flex: 1;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 12px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #b71c1c;
+}
+
+input[type="text"] {
+  width: 320px;
+  padding: 10px;
+  margin: 0 auto 12px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+  border: 1.5px solid #1976d2;
+}
+
+button[ng-reflect-ng-click] {
+  margin-top: 8px;
+  background: #1976d2;
+}
+
+button[ng-reflect-ng-click]:hover {
+  background: #1565c0;
+}
+
+@media (max-width: 500px) {
+  ul, input[type="text"] {
+    width: 95%;
+    min-width: unset;
+  }
 }
