@@ -12,7 +12,8 @@
   </li>
 </ul>
 
-<input type="text" [(ngModel)]="tarefa" placeholder="Adicionar nova tarefa" />
-<button (click)="addTarefa()">Adicionar</button>
-
+<div class="add-tarefa-container">
+  <input type="text" [(ngModel)]="tarefa" placeholder="Adicionar nova tarefa" />
+  <button (click)="addTarefa()">Adicionar</button>
+</div>
 <router-outlet></router-outlet>

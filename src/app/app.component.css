@@ -93,6 +93,28 @@ button[ng-reflect-ng-click]:hover {
   background: #1565c0;
 }
 
+.add-tarefa-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-tarefa-container input[type="text"] {
+  width: 70%;
+  margin: 0;
+}
+
+.add-tarefa-container button {
+  margin: 0;
+  background: #1976d2;
+}
+
+.add-tarefa-container button:hover {
+  background: #1565c0;
+}
+
 @media (max-width: 500px) {
   ul, input[type="text"] {
     width: 95%;
